@@ -1,6 +1,7 @@
 package com.example.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -31,6 +32,7 @@ public class Course {
 
     @ManyToMany(mappedBy = "courses",fetch = FetchType.LAZY)
     @JsonBackReference
+    //@JsonIgnore
     private Set<Student> students;
 
 }
